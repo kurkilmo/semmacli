@@ -1,0 +1,13 @@
+https://www.semma.fi/menuapi/feed/json?costNumber=1408&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1402&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1419&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1405&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1413&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1404&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1401&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1414&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=140301&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1403&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1416&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1411&language=fi
+https://www.semma.fi/menuapi/feed/json?costNumber=1409&language=fi
