@@ -1,5 +1,5 @@
 # Semmacli
-Komentonlinjaohjelma Semman ruokalistojen hakemiseen.
+Komentonlinjaohjelma [Semma](https://www.semma.fi/)n ruokalistojen hakemiseen.
 
 ## Asennus
 Riippuvuuksien asennus komennolla
