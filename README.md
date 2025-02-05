@@ -13,7 +13,7 @@ poetry run semmacli
 
 pip-asennettavan paketin voi muodostaa komennolla
 ```
-poetry run buld
+poetry run build
 ```
 Luodun paketin voi asentaa komennolla
 ```
