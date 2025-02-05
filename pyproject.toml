@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "semmacli"
+version = "0.1.0"
+description = "Command line interface for getting Semma lunch menus"
+authors = ["kurkilmo <ilmo.kurki00@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.13,<3.14"
+termcolor = "^2.5.0"
+requests = "^2.32.3"
+
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^6.11.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+semmacli = "semmacli.semma:main"
