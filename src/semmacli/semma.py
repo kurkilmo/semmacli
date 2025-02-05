@@ -96,7 +96,7 @@ def remove_duplicates(seq):
     seen_add = seen.add
     return [x for x in seq if not (x in seen or seen_add(x))]
 
-if __name__ == "__main__":
+def main():
     locale.setlocale(locale.LC_TIME, "fi_FI")
     try:
         opts, args = getopt.gnu_getopt(sys.argv[1:], "wlda", ["set-default=", "week", "list", "all"])
@@ -145,3 +145,7 @@ if __name__ == "__main__":
 
     if len(args) == 0: exit(0)
     print_restaurants(remove_duplicates(args), show_week)
+
+
+if __name__ == "__main__":
+    main()
