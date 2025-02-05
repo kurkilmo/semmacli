@@ -1,5 +1,5 @@
 # Semmacli
-Komentonlinjaohjelma [Semma](https://www.semma.fi/)n ruokalistojen hakemiseen.
+Komentonlinjaohjelma [Semman](https://www.semma.fi/) ruokalistojen hakemiseen.
 
 ![semmacli tulostus](http://kaljalaite.xyz/api/files/semmacli.png)
 
