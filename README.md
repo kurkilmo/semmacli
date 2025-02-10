@@ -1,7 +1,7 @@
 # Semmacli
 Komentonlinjaohjelma [Semman](https://www.semma.fi/) ruokalistojen hakemiseen.
 
-![semmacli tulostus](http://kaljalaite.xyz/api/files/semmacli.png)
+![semmacli tulostus](https://kaljalaite.xyz/api/files/semmacli.png)
 
 ## Asennus
 Riippuvuuksien asennus komennolla
