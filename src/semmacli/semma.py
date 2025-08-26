@@ -9,8 +9,7 @@ from termcolor import colored, cprint
 
 restaurant_info = {
     "piato":        ("semma", "1408"),
-    "maija":        ("semma", "1402"),
-    # "ilokivi":      ("semma", "1419"),
+    "bistro":       ("compass-group", 3081),
     "syke":         ("semma", "1405"),
     "tilia":        ("semma", "1413"),
     "belvedere":    ("semma", "1404"),
@@ -20,7 +19,6 @@ restaurant_info = {
     "ylistö":       ("semma", "1403"),
     "rentukka":     ("semma", "1416"),
     "norssi":       ("semma", "1411"),
-    "novelli":      ("semma", "1409"),
     "taide":        ("compass-group", "0301")
 }
 
@@ -47,10 +45,14 @@ def print_restaurants(restaurants: list, week=False):
         cprint(format_date(rest_datas[0]["MenusForDays"][day]["Date"]), "light_yellow")
 
         for index, restaurant in enumerate(rest_datas):
-            menu = restaurant["MenusForDays"][day]
             restaurant_name = restaurants[index].capitalize()
+            menu = dict()
+            try:
+                menu = restaurant["MenusForDays"][day]
+            except IndexError:
+                pass
 
-            if len(menu["SetMenus"]) != 0:
+            if menu and len(menu["SetMenus"]) != 0:
                 name_text = colored(restaurant_name, "light_green")
                 open_times = menu["LunchTime"]
                 if open_times:
@@ -58,21 +60,21 @@ def print_restaurants(restaurants: list, week=False):
                 else:
                     open_text = ""
                 print(f"{name_text}{open_text}")
-            else:
-                print(f"{colored(restaurant_name, "light_green")}: {colored("suljettu", "red")}")
-                if index == len(rest_datas) - 1: print()
 
-            for item in menu["SetMenus"]:
-                if not item["Name"] and not item["Price"]: continue
-                price = item["Price"] or ""
-                name = item["Name"] or ""
-                print(f"  {colored(name, "light_cyan")} {price}")
-                for component in item["Components"]:
-                    split = component.replace("\n", " ").split(" (")
-                    title = split[0]
-                    allergens = "(" + split[1]
-                    print(f"      {title} {colored(allergens, "dark_grey")}")
-                print()
+                for item in menu["SetMenus"]:
+                    if not item["Name"] and not item["Price"]: continue
+                    price = item["Price"] or ""
+                    name = item["Name"] or ""
+                    print(f"  {colored(name, "light_cyan")} {price}")
+                    for component in item["Components"]:
+                        split = component.replace("\n", " ").split(" (")
+                        title = split[0]
+                        allergens = "(" + split[1]
+                        print(f"      {title} {colored(allergens, "dark_grey")}")
+                    print()
+            else:
+                print(f"{colored(restaurant_name, "light_green")}: {colored("suljettu", "red")}\n")
+
 
 config_file = f"{os.environ["HOME"]}/.config/semmacli.json"
 def set_default(default):
