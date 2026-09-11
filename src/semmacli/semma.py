@@ -19,6 +19,7 @@ restaurant_info = {
     "ylistö":       ("semma", "1403"),
     "rentukka":     ("semma", "1416"),
     "norssi":       ("semma", "1411"),
+    "ilokivi":       ("semma", "1419"),
     "taide":        ("compass-group", "0301")
 }
 
@@ -32,6 +33,20 @@ def format_date(original_date: str):
     time_struct = time.strptime(original_date.split("T")[0], "%Y-%m-%d")
     return time.strftime("%A %d.%m.%Y", time_struct).capitalize()
 
+# TODO: Fix printing multiple days and restaurans
+# When ilokivi is included day ordering breaks since
+# ilokivi's api data doesn't include closed days
+
+# def find_max_days(rest_datas: list[dict]) -> tuple[int, int]:
+#     days_amount = 1
+#     index = 0
+#
+#     for ind, restaurant in enumerate(rest_datas):
+#         if (day_amt := len(restaurant["MenusForDays"])) > days_amount:
+#             days_amount = day_amt
+#             index = ind
+#
+#     return index, days_amount
 
 def print_restaurants(restaurants: list, week=False):
     rest_datas = list(map(lambda r: request_menu(r), restaurants))
